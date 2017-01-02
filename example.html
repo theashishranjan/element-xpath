@@ -5,7 +5,7 @@
   <script src="element-xpath.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-  <h1>getElementXpath example</h1>
+  <h1>Example, Add your html here</h1>
   <p>Click on page Items to find their xpath</p>
 
   <div id ="content">
@@ -18,13 +18,21 @@
       <span><strong id="bar">Four</strong></span>
     </p>
   </div>
-  <div id="output"></div>
 
 
   <script type="text/javascript">
     document.body.addEventListener("click", function (ev) {
+      var result = {
+        url: null,
+        xpath: null
+      };
+
       getElementXpath(ev.toElement, function (err, xpath) {
         document.getElementById("output").innerText += "\n" + xpath;
+        result.url = window.location.href;
+        result.xpath = xhapth
+        console.log(result);
+        // store url and xpath with any extra info you want, probably the date you saved so you can set refresh xpath after every X days.
       });
     });
   </script>
